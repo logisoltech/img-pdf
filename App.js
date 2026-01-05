@@ -175,15 +175,11 @@ export default function App() {
         // Only add page break after if not the last image
         const pageBreak = index < imagesWithData.length - 1 ? 'page-break-after: always;' : '';
         
-        // Calculate centering position
-        const leftPos = (pageWidth - imageWidth) / 2;
-        const topPos = (pageHeight - imageHeight) / 2;
-        
         return `
-          <div style="${pageBreak} page-break-inside: avoid; width: ${pageWidth}px; height: ${pageHeight}px; margin: 0; padding: 0; position: relative; overflow: hidden; background: none !important;">
+          <div style="${pageBreak} page-break-inside: avoid; width: ${pageWidth}px; height: ${pageHeight}px; margin: 0; padding: 0; position: relative; overflow: hidden; background: #ffffff; display: flex; justify-content: center; align-items: center;">
             <img 
               src="${img.dataUri}" 
-              style="position: absolute; top: ${topPos}px; left: ${leftPos}px; width: ${imageWidth}px; height: ${imageHeight}px; max-width: ${imageWidth}px; max-height: ${imageHeight}px; object-fit: contain; display: block; margin: 0; padding: 0; background: none !important;" 
+              style="max-width: ${imageWidth}px; max-height: ${imageHeight}px; width: ${imageWidth}px; height: ${imageHeight}px; object-fit: contain; display: block; margin: 0; padding: 0;" 
               alt="Image"
             />
           </div>
@@ -206,21 +202,17 @@ export default function App() {
                 padding: 0;
                 width: ${pageWidth}px;
                 height: ${pageHeight}px;
-                background: transparent !important;
+                background: #ffffff;
               }
               @page {
                 margin: 0;
                 size: A4;
-                background: transparent !important;
+                background: #ffffff;
               }
               div {
                 page-break-inside: avoid;
-                background: transparent !important;
                 margin: 0;
                 padding: 0;
-              }
-              img {
-                background: transparent !important;
               }
             </style>
           </head>

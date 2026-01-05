@@ -5,31 +5,27 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#121212"
     },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images for PDF conversion.",
-        "NSPhotoLibraryAddUsageDescription": "This app needs access to save images to your photo library."
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images for PDF conversion."
       }
     },
     "android": {
+      "package": "com.logisol.imgpdf",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#121212"
       },
       "edgeToEdgeEnabled": true,
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "READ_MEDIA_IMAGES"
-      ]
+      "permissions": ["READ_MEDIA_IMAGES"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -41,6 +37,11 @@
           "photosPermission": "The app accesses your photos to let you select images for PDF conversion."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f5a32f1e-b22b-4842-ac17-8c50840bb78b"
+      }
+    }
   }
 }
